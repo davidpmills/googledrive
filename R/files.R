@@ -134,7 +134,7 @@ get_file_by_name <- function(file_name, match_type, id = 'root', page_size = NUL
 #' @export
 copy_file <- function(file_id, folder_id = 'root', file_name = NULL){
   # Get endpoint url
-  url <- get_endpoint("drive.endpoint.files.copy", fileID)
+  url <- get_endpoint("drive.endpoint.files.copy", file_id)
   # Get token
   token <- get_token()
   config <- httr::config(token=token)
@@ -191,7 +191,7 @@ delete_file <- function(file_id){
 #' to a 4 dimensional array in that case
 #'
 #' This function is temporarily disabled as there are issues to be resolved
-#' @param fileID ID of the file in Google Drive
+#' @param file_id ID of the file in Google Drive
 #' @examples
 #' \dontrun{
 #' library(googledrive)
